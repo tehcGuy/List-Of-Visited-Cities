@@ -3,12 +3,14 @@ package com.practice;
 public class Traveler {
     private String travelerName;
     private int travelerAge;
-    private static int numberVisitedCities = 0;
+    private static int numberVisitedCities;
 
     public Traveler(String travelerName, int travelerAge) {
         this.travelerName = travelerName;
         this.travelerAge = travelerAge;
     }
+
+    public Traveler(){}
 
     public String getTravelerName() {
         return travelerName;
