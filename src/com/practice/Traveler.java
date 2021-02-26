@@ -10,7 +10,8 @@ public class Traveler {
         this.travelerAge = travelerAge;
     }
 
-    public Traveler(){}
+    public Traveler() {
+    }
 
     public String getTravelerName() {
         return travelerName;

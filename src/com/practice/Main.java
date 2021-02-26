@@ -11,7 +11,6 @@ Possible ways to improve
 Refactor in such way that:
 1. Handling ConcurrentModificationException in a different way
     1. Placing the navigate content into main method
-2. Fixing option 0 for exiting. It causes the bug of many nested methods, thus, one has to press 0 many times
 
 IT IS AN EXEMPLARY CODE
 
@@ -20,6 +19,7 @@ Takeaways from this project:
 2. Methods: removeCity, alphabeticallyAdd, loadToList
 3. Traveler class
 4. The design of classes! //important
+5. System.exit(0)
 */
 
 import java.util.*;
@@ -32,6 +32,9 @@ public class Main {
         System.out.println(summerPlan.getTravelerName() + ",");
         System.out.println("You are just " + summerPlan.getTravelerAge() + " years old and using \""
                 + summerPlan.getTripName() + "\" list, you've visited " + Traveler.getNumberVisitedCities() + " cities. Wow!");
+        //never access static methods/fields with an instance (summerPlan.getNumberVisitedCities)
+        // It is a bad practice!
+
     }
 
 

@@ -8,9 +8,6 @@ public class List extends Traveler {
     private LinkedList<String> linkedList;
     private String tripName;
 
-    private static int amountNestedMethods; //possible improvement of nested methods
-    //idea:
-    //  count how many times they were nested, then return the same amount with a for loop?
 
     public List(String travelerName, int travelerAge, String tripName) {//it has to have same amount of parameters or more with super constructor!
         super(travelerName, travelerAge);
@@ -18,7 +15,8 @@ public class List extends Traveler {
         this.linkedList = new LinkedList<>();
     }
 
-    public List(){} //it has to have same amount of parameters or more with super constructor!
+    public List() {
+    } //it has to have same amount of parameters or more with super constructor!
 
     public LinkedList<String> getLinkedList() {
         return linkedList;
@@ -33,7 +31,6 @@ public class List extends Traveler {
             System.out.println(deletedCity + " has been removed");
         } else System.out.println("Could not find the city you want to remove");
 
-        List.amountNestedMethods++;
         List.navigate(cityList);
     }
 
@@ -53,7 +50,6 @@ public class List extends Traveler {
         }
         listIterator.add(cityName);
 
-        List.amountNestedMethods++;
         List.navigate(listOfCities);
     }
 
@@ -66,7 +62,6 @@ public class List extends Traveler {
         alphabeticallyAdd(listOfCities, "Lodz");
         alphabeticallyAdd(listOfCities, "Wroclaw");
 
-        List.amountNestedMethods++;
         List.navigate(listOfCities);
     }
 
@@ -104,11 +99,7 @@ public class List extends Traveler {
             switch(choice) {
                 case 0:
                     System.out.println("Goodbye");
-                    //possible improvement
-/*                    for(int i = 0; i <= List.amountNestedMethods; i++) {
-                        return;
-                    }*/
-                    return;
+                    System.exit(0);
                 case 1: //moving forward
                     if(!goingForward) {
                         if(listIterator.hasNext()) {
